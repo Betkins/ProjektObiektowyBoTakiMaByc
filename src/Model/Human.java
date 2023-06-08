@@ -39,13 +39,24 @@ public class Human extends BasicCharacter implements Istatistical {
 
     @Override
     public void CalculateStatistic() {
-        setInteligence(10);
-        setDextirity(10);
-        setStrength(10);
-        setHealthPoint(getLevel()*10);
+        setInteligence(10+getLevel());
+        setDextirity(10*getLevel());
+        setStrength(10*getLevel());
+        setHealthPoint(getLevel()+getInteligence()+getStrength()+getDextirity());
 
     }
-    public void wyswietl(){
-        System.out.println(getLevel()+" "+getStrength()+" "+getDextirity()+" "+getInteligence()+" "+getHealthPoint());
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        return stringBuilder.append("Level:")
+                .append(getLevel())
+                .append(" \nHP:")
+                .append(getHealthPoint())
+                .append(" \nSTR:")
+                .append(getStrength())
+                .append(" \nDEX:")
+                .append(getDextirity())
+                .append(" \nINT:")
+                .append(getInteligence())
+                .toString();
     }
 }

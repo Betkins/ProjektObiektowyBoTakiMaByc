@@ -6,7 +6,6 @@ public class Main {
     public static void main(String[] args) {
         CreateCharacter createCharacter = new CreateCharacter();
         BasicCharacter basicCharacter = createCharacter.createCharacter();
-        Statistics statistics = new Statistics();
-        statistics.PrepareCharacter(basicCharacter);
+        System.out.println(basicCharacter.toString());
     }
 }

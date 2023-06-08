@@ -22,6 +22,15 @@ public abstract class BasicCharacter {
         HealthPoint = healthPoint;
     }
 
+    public String toString(){
+        StringBuilder stringBuilder = new StringBuilder();
+        return stringBuilder.append(getLevel())
+                            .append(" ")
+                            .append(getHealthPoint())
+                            .toString();
+
+    }
+
 
 
 }

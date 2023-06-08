@@ -25,11 +25,18 @@ public class Animal extends BasicCharacter implements Istatistical {
         public void CalculateStatistic() {
 
 
-            setStrength(10);
-            setHealthPoint(getLevel() * 20);
+            setStrength(getLevel()*5);
+            setHealthPoint(getLevel()+2*getStrength());
 
         }
-    public void wyswietl(){
-        System.out.println(getLevel()+" "+getStrength()+" "+getHealthPoint());
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        return stringBuilder.append("\nLevel:")
+                .append(getLevel())
+                .append(" \nHP:")
+                .append(getHealthPoint())
+                .append(" \nSTR:")
+                .append(getStrength())
+                .toString();
     }
 }

@@ -16,9 +16,9 @@ public class Orc extends BasicCharacter implements Istatistical {
 
     public void CalculateStatistic() {
 
-        setDextirity(10);
-        setStrength(10);
-        setHealthPoint(getLevel() * 20);
+        setDextirity(10+getLevel());
+        setStrength(getLevel()*20);
+        setHealthPoint(getLevel() * 20 + getStrength());
 
     }
 
@@ -37,7 +37,17 @@ public class Orc extends BasicCharacter implements Istatistical {
     public void setDextirity(int dextirity) {
         this.dextirity = dextirity;
     }
-    public void wyswietl() {
-        System.out.println(getLevel() + " " + getStrength() + " " + getDextirity()+ " " + getHealthPoint());
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+
+        return stringBuilder.append("level: ")
+                .append(getLevel())
+                .append(" \nHP:")
+                .append(getHealthPoint())
+                .append(" \nSTR:")
+                .append(getStrength())
+                .append(" \nDEX:")
+                .append(getDextirity())
+                .toString();
     }
 }

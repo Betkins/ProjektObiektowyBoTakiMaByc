@@ -11,6 +11,7 @@ public class CreateCharacter {
     public BasicCharacter createCharacter() {
 
         int wybor = 0;
+        Statistics stats = new Statistics();
         Scanner scan = new Scanner(System.in);
         do {
             Statistics statistics = new Statistics();
@@ -21,19 +22,30 @@ public class CreateCharacter {
             wybor = scan.nextInt();
             switch (wybor){
                 case 1:
-                    Human human = new Human(1);
+                    Human human = new Human(chooseLevel());
+                    stats.PrepareCharacter(human);
+                    return human;
 
-                    return new Human(1);
                 case 2:
-                    return new Animal(1);
+                    Animal animal = new Animal(chooseLevel());
+                    stats.PrepareCharacter(animal);
+                    return animal;
                 case 3:
-                    return new Orc(1);
+                    Orc orc = new Orc(chooseLevel());
+                    stats.PrepareCharacter(orc);
+                    return orc;
 
 
             }
         } while (wybor < 1 && wybor > 3);
         return new Human (1);
 
+    }
+    private int chooseLevel(){
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Podaj poziom byku ");
+        return scan.nextInt();
     }
 }
 
