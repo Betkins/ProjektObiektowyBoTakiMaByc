@@ -4,6 +4,10 @@ public abstract class BasicCharacter {
 
     private int Level;
     private int HealthPoint;
+    private Guild guild;
+    private Perk perk;
+
+
 
 
     public int getLevel() {
@@ -32,5 +36,19 @@ public abstract class BasicCharacter {
     }
 
 
+    public Guild getGuild() {
+        return guild;
+    }
 
+    public void setGuild(Guild guild) {
+        this.guild = guild;
+    }
+
+    public Perk getPerk() {
+        return perk;
+    }
+
+    public void setPerk(Perk perk) {
+        this.perk = perk;
+    }
 }

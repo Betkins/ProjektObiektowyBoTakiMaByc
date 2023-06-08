@@ -2,11 +2,13 @@ package Model;
 
 import Controller.Istatistical;
 
-public class Human extends BasicCharacter implements Istatistical {
+public class Human extends BasicCharacter implements Istatistical{
 
     private int strength;
     private int dextirity;
     private int inteligence;
+
+
 
     public Human(int Level) {
         setLevel(Level);
