@@ -53,6 +53,7 @@ public class ChooseGuild {
                 case 2:
 
                     orc.setGuild(Guild.SCOUT);
+
                     break;
 
                 default:
